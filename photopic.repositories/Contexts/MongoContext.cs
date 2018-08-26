@@ -5,6 +5,13 @@ using MongoDB.Driver;
 using photopic.domain;
 using photopic.repositories.Attributes;
 
+/*
+ * Thanks to Alexandre SPIESER, https://github.com/alexandre-spieser
+ * for the great MongoDB generic repository architecture!
+ * https://github.com/alexandre-spieser/mongodb-generic-repository
+ *  
+ */
+
 namespace photopic.repositories.Contexts
 {
     public class MongoContext: IMongoContext
