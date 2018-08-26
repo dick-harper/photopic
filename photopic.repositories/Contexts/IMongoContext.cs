@@ -9,5 +9,6 @@ namespace photopic.repositories.Contexts
         IMongoClient Client { get; set; }
         IMongoDatabase Database { get; set; }
         IMongoCollection<TDocument> GetCollection<TDocument>() where TDocument : IDocument;
+        void SetGuidRepresentation(MongoDB.Bson.GuidRepresentation guidRepresentation);
     }
 }
