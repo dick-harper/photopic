@@ -3,7 +3,7 @@ using System.Reflection;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using photopic.domain;
-using photopic.repositories.Attributes;
+using photopic.domain.Attributes;
 
 /*
  * Thanks to Alexandre SPIESER, https://github.com/alexandre-spieser

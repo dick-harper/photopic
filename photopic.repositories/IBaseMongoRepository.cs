@@ -5,7 +5,7 @@ namespace photopic.repositories
 {
     public interface IBaseMongoRepository : IReadOnlyMongoRepository
     {
-        Task<TDocument> AddOneAsync<TDocument>(TDocument document) where TDocument : IDocument;
+        Task AddOneAsync<TDocument>(TDocument document) where TDocument : IDocument;
         void AddOne<TDocument>(TDocument document) where TDocument : IDocument;
     }
 }

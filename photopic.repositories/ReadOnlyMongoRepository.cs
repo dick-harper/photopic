@@ -35,7 +35,7 @@ namespace photopic.repositories
         public async Task<TDocument> GetByIdAsync<TDocument>(Guid id) where TDocument : IDocument
         {
             var filter = Builders<TDocument>.Filter.Eq("Id", id);
-            return await MongoContext.GetCollection<TDocument>().Find(filter).FirstOrDefaultAsync();
+            return await GetCollection<TDocument>().Find(filter).FirstOrDefaultAsync();
         }
 
         public TDocument GetById<TDocument>(Guid id) where TDocument : IDocument
@@ -43,5 +43,21 @@ namespace photopic.repositories
             var filter = Builders<TDocument>.Filter.Eq("Id", id);
             return MongoContext.GetCollection<TDocument>().Find(filter).FirstOrDefault();
         }
+
+        protected IMongoCollection<TDocument> GetCollection<TDocument>() where TDocument : IDocument
+        {
+            return MongoContext.GetCollection<TDocument>();
+        }
+
+        //protected IMongoCollection<TDocument> HandlePartitioned<TDocument, TKey>(string partitionKey)
+        //    where TDocument : IDocument<TKey>
+        //    where TKey : IEquatable<TKey>
+        //{
+        //    if (!string.IsNullOrEmpty(partitionKey))
+        //    {
+        //        return GetCollection<TDocument, TKey>(partitionKey);
+        //    }
+        //    return GetCollection<TDocument, TKey>();
+        //}
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace photopic.repositories.Attributes
+namespace photopic.domain.Attributes
 {
 
     [AttributeUsage(AttributeTargets.Class)]
